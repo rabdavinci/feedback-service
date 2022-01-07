@@ -2,14 +2,14 @@ version: '3.2'
 
 services:
   feedback-service:
-    build: feedback-service/frontend
+    build: feedback-service
     ports:
       - 20080:80
     volumes:
       # Re-use local composer cache via host-volume
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
       # Mount source-code for development
-      - ./feedback-service:/app
+      #- ./feedback-service:/app
   mysql:
     image: mysql:5.7
     environment:
