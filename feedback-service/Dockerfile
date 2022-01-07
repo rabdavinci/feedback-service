@@ -5,4 +5,3 @@ COPY . .
 RUN sed -i -e 's|/app/web|/app/frontend/web|g' /etc/apache2/sites-available/000-default.conf
 WORKDIR /app
 RUN php init --env=Development --overwrite=n || true
-RUN composer install
