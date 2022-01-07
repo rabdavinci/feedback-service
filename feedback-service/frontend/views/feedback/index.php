@@ -32,6 +32,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'user_id',
             'title',
             'text',
+            [
+              'attribute' => 'state',
+              'value' => function($model) {
+                  return $model->state == Feedback::STATE_IN_PROGRESS ? 'in progress' : 'com[pleted';
+              }
+            ],
             'created_at:date',
             'updated_at:date',
             [

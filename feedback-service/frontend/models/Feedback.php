@@ -17,6 +17,8 @@ use common\models\User;
  */
 class Feedback extends \yii\db\ActiveRecord
 {
+    const STATE_IN_PROGRESS = 0;
+    const STATE_COMPLETED = 1;
     /**
      * {@inheritdoc}
      */
@@ -43,6 +45,7 @@ class Feedback extends \yii\db\ActiveRecord
             [['title'], 'string', 'max' => 50],
             [['text'], 'string', 'max' => 255],
             [['created_at', 'updated_at'], 'safe'],
+            ['state', 'in', 'range' => [self::STATE_IN_PROGRESS, self::STATE_COMPLETED]],
         ];
     }
 

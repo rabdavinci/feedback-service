@@ -17,6 +17,7 @@ class m220107_165918_create_feedback_table extends Migration
             'user_id' => $this->integer()->notNull(),
             'title' => $this->string(50)->notNull(),
             'text' => $this->string()->notNull(),
+            'state' => $this->integer(1)->defaultValue(0),
             'created_at' => $this->integer(),
             'updated_at' => $this->integer(),
         ]);
